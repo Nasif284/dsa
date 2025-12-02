@@ -64,24 +64,41 @@ class Tree {
       arr.shift();
       if (curr == null) {
         if (arr.length > 0) {
-            arr.push(null);
-            console.log(".........")
+          arr.push(null);
+          console.log(".........");
           continue;
         } else {
           break;
         }
-        }
-         console.log(curr.value);
-         if (curr.left) {
-           arr.push(curr.left);
-         }
-         if (curr.right) {
-           arr.push(curr.right);
-         }
+      }
+      console.log(curr.value);
+      if (curr.left) {
+        arr.push(curr.left);
+      }
+      if (curr.right) {
+        arr.push(curr.right);
+      }
     }
+  }
+  hight(root) {
+    if (root == null) {
+      return 0
+    }
+    let left = this.hight(root.left)
+    let right = this.hight(root.right)
+    return Math.max(left,right)+1
+  }
+  countNodes(root) {
+    if (root == null) {
+      return 0
+    }
+   
+   
+    return 1 + this.countNodes(root.left) + this.countNodes(root.right);
   }
 }
 
 let bt = new Tree();
-let root = bt.buildTree([1, 2, -1, -1, 3, 4, -1, -1, 5]);
-bt.levelOrder(root);
+let root = bt.buildTree([1, 2, -1, -1, 3, 4, -1, -1, 5,3,-1,-1]);
+// bt.levelOrder(root);
+console.log(bt.countNodes(root))

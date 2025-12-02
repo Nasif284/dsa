@@ -138,4 +138,23 @@ function findLastoccurrence(arr, target) {
   }
   return result;
 }
-console.log(findLastoccurrence([1,1,2,2,2,2,3,4],2))
+// console.log(findLastoccurrence([1, 1, 2, 2, 2, 2, 3, 4], 2))
+
+function c(num,count) {
+  if (num <= 0) {
+    return count
+  }
+  if (num % 10 == 0) {
+    count++
+  }
+ return c(Math.floor(num / 10), count)
+}
+console.log(c(1000, 0))
+
+function countZero(n) {
+  if (n === 0) return 0;
+  let digit = n % 10;
+  let count = digit === 0 ? 1 : 0
+  return count +countZero(Math.floor(n/10))
+}
+console.log(countZero(50008));
