@@ -75,10 +75,28 @@ class BST{
         }
         return root
     }
+    isValidate(root) {
+        return this.validate(root,-Infinity,Infinity)
+    }
+    validate(root, min, max) {
+        if (root == null) {
+            return true
+        }
+
+        if (root.value <= min || root.value >= max) {
+            return false
+        }
+
+        return (
+            this.validate(root.right, root.value, max) &&
+            this.validate(root.left,min,root.value)
+        )
+    }
 }
 let bst = new BST()
 bst.build([3, 2, 5, 4, 6, 1]);
-bst.inOrder(bst.root)
-console.log(bst.search(bst.root, 9))
-bst.delete(bst.root, 2)
-bst.inOrder(bst.root);
+// bst.inOrder(bst.root)
+// console.log(bst.search(bst.root, 9))
+// bst.delete(bst.root, 2)
+// bst.inOrder(bst.root);
+console.log(bst.isValidate(bst.root))

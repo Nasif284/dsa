@@ -82,23 +82,78 @@ class Tree {
   }
   hight(root) {
     if (root == null) {
-      return 0
+      return 0;
     }
-    let left = this.hight(root.left)
-    let right = this.hight(root.right)
-    return Math.max(left,right)+1
+    let left = this.hight(root.left);
+    let right = this.hight(root.right);
+    return Math.max(left, right) + 1;
   }
   countNodes(root) {
     if (root == null) {
-      return 0
+      return 0;
     }
-   
-   
     return 1 + this.countNodes(root.left) + this.countNodes(root.right);
+  }
+  sum(root) {
+    if (root == null) {
+      return 0;
+    }
+    return this.sum(root.left) + this.sum(root.right) + root.value;
+  }
+  topView(root) {
+    let map = new Map();
+    let queue = [[root, 0]];
+    while (queue.length) {
+      let [node, hd] = queue.shift();
+      if (!map.has(hd)) {
+        map.set(hd, node.value);
+      }
+      if (node.left) {
+        queue.push([node.left, hd - 1]);
+      }
+      if (node.right) {
+        queue.push([node.right, hd + 1]);
+      }
+    }
+    for (let [key, val] of map) {
+      console.log(val);
+    }
+  }
+  closestVal(root, val) {
+    let closest = root.value;
+    while (root !== null) {
+      if (Math.abs(val - root.value) < Math.abs(val - closest)) {
+        closest = root.value;
+      }
+      if (val < root.value) {
+        root = root.left;
+      } else {
+        root = root.right;
+      }
+    }
+    return closest;
+  }
+  isBalanced(root) {
+    return this.validate(root) !== -1;
+  }
+  validate(root) {
+    if (root == null) return 0
+    
+    let left = this.validate(root.left)
+    if (left == -1) return -1
+    
+    let right = this.validate(root.right)
+    if (right == -1) return -1
+    
+    if (Math.abs(left - right) > 1) return -1
+    
+    return Math.max(left,right)+1
   }
 }
 
 let bt = new Tree();
 let root = bt.buildTree([1, 2, -1, -1, 3, 4, -1, -1, 5,3,-1,-1]);
 // bt.levelOrder(root);
-console.log(bt.countNodes(root))
+// console.log(bt.topView(root))
+// bt.topView(root);
+console.log(bt.isBalanced(root))
