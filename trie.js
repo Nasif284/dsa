@@ -34,26 +34,27 @@ class Trie {
       node = node.children[char];
     }
     return true;
+  }
+  collect(node, prefix, result) {
+    if (node.isEnd) result.push(prefix);
+    for (let ch in node.children) {
+      this.collect(node.children[ch], prefix + ch, result);
     }
-    collect(node, prefix, result) {
-        if (node.isEnd) result.push(prefix)
-        for (let ch in node.children) {
-            this.collect(node.children[ch],prefix+ch,result)
-        }
+  }
+  autoComplete(prefix) {
+    let node = this.root;
+    for (let ch of prefix) {
+      if (!node.children[ch]) return [];
+      node = node.children[ch];
     }
-    autoComplete(prefix) {
-        let node = this.root
-        for (let ch of prefix) {
-            if (!node.children[ch]) return []
-            node = node.children[ch]
-        }
-        let result = []
-        this.collect(node, prefix, result)
-        return result
-    }
+    let result = [];
+    this.collect(node, prefix, result);
+    return result;
+  }
+  longestPrefix() {
+    
+  }
 }
-
-
 
 let t = new Trie();
 let arr = ["The", "Their", "Them", "Apple"];
