@@ -21,3 +21,12 @@ function unshiftArr(arr) {
     return arr
 }
 console.log(unshiftArr(arr));
+
+
+function findMissingNumber (arr){
+    let n = arr.length + 1
+    let sum1 = n * (n+1)/2
+    let sum2 = arr.reduce((acc,curr) => acc+curr,0)
+    return sum1 - sum2
+}
+console.log(findMissingNumber(arr))
