@@ -21,7 +21,6 @@ function unshiftArr(arr) {
     return arr
 }
 console.log(unshiftArr(arr));
-
 function findMissingNumber (arr){
     let n = arr.length + 1
     let sum1 = n * (n+1)/2
