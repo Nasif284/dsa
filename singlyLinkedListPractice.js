@@ -27,6 +27,7 @@ class LinkedList {
     }
     this.length++;
   }
+  
   unshift(value) {
     let newNode = new Node(value);
     newNode.next = this.head;

@@ -15,7 +15,6 @@ const bubbleSort = (arr) => {
     return arr
 }
 // console.log(bubbleSort(arr))
-
 const selectionSort = (arr) =>{
     for (let i = 0; i < arr.length; i++){
         let min = i
