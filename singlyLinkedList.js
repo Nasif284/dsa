@@ -130,6 +130,7 @@ class LinkedList {
       }
     }
   }
+  
   removeDupes() {
     let current = this.head
     while (current) {
