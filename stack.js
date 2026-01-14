@@ -18,7 +18,8 @@ class Stack {
     return this.stack[this.stack.length - 1];
   }
   size() {
-    return this.stack.length;
+    return this.stack.l
+    ength;
   }
 }
 
@@ -36,6 +37,7 @@ class Node {
     this.next = null;
   }
 }
+
 class StackLinked {
   constructor() {
     this.head = null;
