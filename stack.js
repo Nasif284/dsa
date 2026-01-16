@@ -34,7 +34,10 @@ class Node {
     this.value = value;
     this.next = null;
   }
-}
+} 
+
+
+
 class StackLinked {
   constructor() {
     this.head = null;
