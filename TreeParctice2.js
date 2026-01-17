@@ -97,13 +97,12 @@ class Tree2 {
     console.log(root.value);
   }
 }
-
 let tree = new Tree2();
 tree.root = tree.buildByPreOrder([1, 2, -1, -1, 3, 4, -1, -1, 5]);
-// console.log(tree.buildByLevelOrder([1,2,3,4,5,6,7]))
-// tree.buildByElements(1);
-// tree.buildByElements(2);
-// tree.buildByElements(3);
-// tree.buildByElements(4);tree.buildByElements(5);
+console.log(tree.buildByLevelOrder([1,2,3,4,5,6,7]))
+tree.buildByElements(1);
+tree.buildByElements(2);
+tree.buildByElements(3);
+tree.buildByElements(4);tree.buildByElements(5);
 
 tree.postOrder(tree.root);
