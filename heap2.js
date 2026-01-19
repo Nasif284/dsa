@@ -60,9 +60,8 @@ class Heap2 {
         }
     }
 }
-
 let h = new Heap2();
-// h.insert(10);
-// h.insert(20)
+h.insert(10);
+h.insert(20)
 h.buildHeapFromArr([7,3,5,10,8,2,4])
 console.log(h.heap);
