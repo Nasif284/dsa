@@ -87,6 +87,7 @@ class BST2 {
       return this.search(root.right, target);
     }
   }
+
   levelOrderSearch(val) {
     let curr = this.root;
     while (curr !== null) {
@@ -100,7 +101,8 @@ class BST2 {
       }
     }
     return false;
-    }
+  }
+  
     getSuccessor(root) {
         while (root.left !== null) {
             root = root.left
