@@ -27,13 +27,13 @@ class LinkedList {
     }
     this.length++;
   }
-  
   unshift(value) {
     let newNode = new Node(value);
     newNode.next = this.head;
     this.head = newNode;
     this.length++;
   }
+  
   print() {
     let current = this.head;
     while (current) {
