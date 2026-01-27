@@ -32,12 +32,12 @@ class DoublyLinkedList {
     this.head = newNode;
     this.length++;
   }
+  
   shift() {
     this.head.next.prev = null;
     this.head = this.head.next;
     this.length--;
     }
-    
     reverse() {
         let temp = this.head
         this.head = this.tail
