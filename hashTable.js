@@ -34,6 +34,7 @@ class HashTable {
         return undefined
     }
     
+    
     delete(key) {
         let index = this.hash(key)
         let table = this.table[index]
