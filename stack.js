@@ -36,8 +36,6 @@ class Node {
   }
 } 
 
-
-
 class StackLinked {
   constructor() {
     this.head = null;
