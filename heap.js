@@ -35,6 +35,7 @@ class Heap {
       }
     }
   }
+
   heapify(arr, n, i) {
     let largest = i;
     let left = 2 * i;
@@ -50,6 +51,7 @@ class Heap {
       this.heapify(arr, n, largest);
     }
   }
+  
   heapSort(arr, n) {
       let s = n;
       for (let i = Math.floor(arr.length / 2) ; i > 0; i--){
