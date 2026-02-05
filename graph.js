@@ -36,6 +36,7 @@ class Graph {
     delete this.adjacencyList[vtx];
     return true;
   }
+  
   dfs(start) {
     let visited = new Set();
 
@@ -52,6 +53,7 @@ class Graph {
 
     helper(start);
   }
+
   bfs(start) {
     let visited = new Set([start]);
     let queue = [start];
@@ -67,7 +69,8 @@ class Graph {
         }
       }
     }
-    }
+  }
+  
     shortestPath(start, end) {
         let visited = new Set([start])
         let queue = [start]
