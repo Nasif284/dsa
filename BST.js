@@ -47,12 +47,14 @@ class BST{
            return this.search(root.right,target)
         }
     }
+
     getSuccessor(root) {
         while (root.left !== null && root.right !== null) {
             root = root.left
         }
         return root
     }
+    
     delete(root, target) {
         if (root == null) {
             return null
