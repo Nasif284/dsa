@@ -94,14 +94,12 @@ class Tree {
     }
     return 1 + this.countNodes(root.left) + this.countNodes(root.right);
   }
-
   sum(root) {
     if (root == null) {
       return 0;
     }
     return this.sum(root.left) + this.sum(root.right) + root.value;
   }
-  
   topView(root) {
     let map = new Map();
     let queue = [[root, 0]];
