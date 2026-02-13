@@ -104,6 +104,7 @@ function instanceRemove(str, s) {
     return str[0] + instanceRemove(str.slice(1),s) 
   }
 }
+
 // console.log(instanceRemove("apple","p"));
 function reverse(string) {
   if (string.length == 0) {
