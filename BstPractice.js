@@ -87,7 +87,6 @@ class BST2 {
       return this.search(root.right, target);
     }
   }
-
   levelOrderSearch(val) {
     let curr = this.root;
     while (curr !== null) {
@@ -102,34 +101,33 @@ class BST2 {
     }
     return false;
   }
-  
-    getSuccessor(root) {
-        while (root.left !== null) {
-            root = root.left
-        }
-        return root
+  getSuccessor(root) {
+    while (root.left !== null) {
+      root = root.left;
     }
-    delete(root,val) {
-        if (root == null) {
-            return null
-        }
-        if (root.value > val) {
-            root.left =this.delete(root.left,val)
-        } else if (root.value < val) {
-            root.right = this.delete(root.right,val)
-        } else {
-            if (root.right == null) {
-                root = root.left
-            } else if (root.left == null) {
-                root = root.right
-            } else {
-                let suc = this.getSuccessor(root.right)
-                root.value = suc.value
-                root.right = this.delete(root.right,suc.value)
-            }
-        }
-        return root
+    return root;
+  }
+  delete(root, val) {
+    if (root == null) {
+      return null;
     }
+    if (root.value > val) {
+      root.left = this.delete(root.left, val);
+    } else if (root.value < val) {
+      root.right = this.delete(root.right, val);
+    } else {
+      if (root.right == null) {
+        root = root.left;
+      } else if (root.left == null) {
+        root = root.right;
+      } else {
+        let suc = this.getSuccessor(root.right);
+        root.value = suc.value;
+        root.right = this.delete(root.right, suc.value);
+      }
+    }
+    return root;
+  }
 }
 
 let bst = new BST2();
@@ -140,6 +138,6 @@ let bst = new BST2();
 // bst.insert(1)
 // bst.formArray([6, 1, 4, 9, 3, 7, 7, 9, 4]);
 bst.fromPreOrder([6, 1, 4, 3, 9, 7, 8]);
-bst.delete(bst.root,1)
+bst.delete(bst.root, 1);
 // console.log(bst.levelOrderSearch(9));
-console.log(bst.root)
+console.log(bst.root);
