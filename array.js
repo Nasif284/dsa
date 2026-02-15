@@ -11,7 +11,6 @@ function reverseAndSquare(arr) {
     }
     return arr
 }
-
 let arr = [1,2,3,4,5]
 // console.log(reverseAndSquare([1, 2, 3, 4, 5]));
 function unshiftArr(arr) {
