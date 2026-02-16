@@ -60,6 +60,7 @@ class Heap2 {
         }
     }
 }
+
 let h = new Heap2();
 h.insert(10);
 h.insert(20)
