@@ -104,7 +104,6 @@ function instanceRemove(str, s) {
     return str[0] + instanceRemove(str.slice(1),s) 
   }
 }
-
 // console.log(instanceRemove("apple","p"));
 function reverse(string) {
   if (string.length == 0) {
@@ -112,7 +111,6 @@ function reverse(string) {
   }
   return reverse(string.slice(1)) + string[0];
 }
-
 function reverseEach(sentence) {
   let words = sentence.split(" ");
   function helper(index) {
