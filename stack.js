@@ -35,7 +35,6 @@ class Node {
     this.next = null;
   }
 } 
-
 class StackLinked {
   constructor() {
     this.head = null;
@@ -73,6 +72,7 @@ class StackLinked {
         this.length--
     }
     
+  
 }
 let st = new StackLinked()
 st.push(1)
