@@ -59,7 +59,6 @@ class Graph {
     while (queue.length > 0) {
       let vtx = queue.shift();
       console.log(vtx);
-
       for (let nbr of this.adjacencyList[vtx]) {
         if (!visited.has(nbr)) {
           visited.add(nbr);
