@@ -68,4 +68,42 @@ function instanceRemove(str, s) {
         return  str[0] + instanceRemove(str.slice(1),s)
     }
 }
-console.log(instanceRemove("apple", "p"));
+// console.log(instanceRemove("apple", "p"));
+function sumOfArr(arr,i = arr.length-1) {
+    if (i < 0) {
+        return 0
+    }
+    return arr[i] + sumOfArr(arr,i-1)
+}
+// console.log(sumOfArr([1, 2, 3, 4, 5, 6]));
+function countOfOcc(str, s) {
+    if (!str.length) {
+        return 0
+    }
+    return (str[0] == s ? 1 : 0) + countOfOcc(str.slice(1),s)
+}
+// console.log(countOfOcc("apple","p"))
+function isSorted(arr, i = 0) {
+    if (i > arr.length - 1) {
+        return true
+    }
+    if (arr[i] > arr[i + 1]) return false
+    else return isSorted(arr,i+1)
+}
+// console.log(isSorted([1,2,6,4]))
+function printNum(n) {
+    if (n == 0) {
+        return
+    }
+    console.log(n);
+    printNum(n - 1)
+    
+}
+// console.log(printNum(9))
+function sumOfDigits(num) {
+    if (num == 0) {
+        return 0
+    }
+    return (num%10) + sumOfDigits(Math.floor(num/10)) 
+}
+console.log(sumOfDigits(786))
