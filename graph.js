@@ -66,31 +66,33 @@ class Graph {
         }
       }
     }
+  }
     shortestPath(start, end) {
-        let visited = new Set([start])
-        let queue = [start]
-        let parent = {}
-        while (queue.length > 0) {
-            let vtx = queue.shift()
-            if (vtx == end) break
-            for (let nbr of this.adjacencyList[vtx]) {
-                if (!visited.has(nbr)) {
-                    visited.add(nbr)
-                    parent[nbr] = vtx
-                    queue.push(nbr)
-                }
-            }
+      let visited = new Set([start])
+      let queue = [start]
+      let parent = {}
+      while (queue.length > 0) {
+        let vtx = queue.shift()
+        if (vtx == end) break
+        for (let nbr of this.adjacencyList[vtx]) {
+          if (!visited.has(nbr)) {
+            visited.add(nbr)
+            parent[nbr] = vtx
+            queue.push(nbr)
+          }
         }
+      }
 
-        let path = []
-        let cur = end
-        while (cur !== undefined) {
-            path.push(cur)
-            cur = parent[cur]
-        }
-        return path.reverse()
+      let path = []
+      let cur = end
+      while (cur !== undefined) {
+        path.push(cur)
+        cur = parent[cur]
+      }
+      return path.reverse()
     }
-}
+  }
+
 
 let g = new Graph();
 g.addVertexes("A");
